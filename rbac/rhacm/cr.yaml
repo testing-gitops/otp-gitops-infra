@@ -33,6 +33,7 @@ rules:
       - channels
       - deployables
       - helmreleases
+      - gitopsclusters
     verbs:
       - update
       - create
@@ -95,7 +96,7 @@ rules:
       - managedclusters/status
       - managedclustersets
       - managedclustersets/join
-      - managedclustersetbinding
+      - managedclustersetbindings
       - placements
   - apiGroups:
       - internal.open-cluster-management.io
