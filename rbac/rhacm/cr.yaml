@@ -96,9 +96,9 @@ rules:
       - managedclusters/status
       - managedclustersets
       - managedclustersets/join
+      - managedclustersets/bind
       - managedclustersetbindings
       - placements
-      - admission
   - apiGroups:
       - internal.open-cluster-management.io
     resources:
