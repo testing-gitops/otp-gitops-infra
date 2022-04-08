@@ -98,6 +98,7 @@ rules:
       - managedclustersets/join
       - managedclustersetbindings
       - placements
+      - admission/managedclustersetbindingvalidators
   - apiGroups:
       - internal.open-cluster-management.io
     resources:
@@ -200,6 +201,15 @@ rules:
       - submarineraddon.open-cluster-management.io
     resources:
       - submarinerconfigs
+    verbs:
+      - create
+      - read
+      - update
+      - delete
+  - apiGroups:
+      - agent-install.openshift.io
+    resources:
+      - agentserviceconfigs
     verbs:
       - create
       - read
