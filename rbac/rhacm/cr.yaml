@@ -99,6 +99,7 @@ rules:
       - managedclustersets/bind
       - managedclustersetbindings
       - placements
+      - placementdecisions
   - apiGroups:
       - internal.open-cluster-management.io
     resources:
