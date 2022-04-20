@@ -66,6 +66,8 @@ rules:
       - machinepools
       - clusterdeployments
       - selectorsyncsets
+      - syncsets
+      - admission
     verbs:
       - update
       - create
