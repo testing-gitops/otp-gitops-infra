@@ -1,4 +1,4 @@
-{{- $machinesets := tuple "storage" "infra" "cp4x" -}}
+{{- $machinepools := tuple "storage" "infra" "cp4x" -}}
 {{- if and (eq $.Values.cloudProvider.name "aws") (eq $.Values.cloudProvider.managed true) -}}
   {{- $machinepools := tuple "storage" "cp4x" -}}
 {{- end -}}
