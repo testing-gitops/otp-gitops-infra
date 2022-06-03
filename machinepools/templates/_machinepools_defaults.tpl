@@ -126,7 +126,7 @@ Default IOPS for AWS
 {{- if eq .Name "cp4x" -}}
 {{- default "4000" .Values.cloud.cloudpakNodes.volumeIops }}
 {{- end -}}
-{{- end }}
+{{- end -}}
 
 {{/*
 Default Node Volume Size
