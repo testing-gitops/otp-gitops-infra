@@ -30,6 +30,7 @@ MachinePool ClusterDeploymentRef
 */}}
 
 {{- define "machinepools.clusterdeploymentref" -}}
+{{- $params := dict "Values" .Values "Name" .Name -}}
 {{- if eq $.Values.cloudProvider.name "azure" -}}
 {{- include "machinepools.clusterdeploymentref.azure" $params -}}
 {{- end -}}
@@ -76,13 +77,9 @@ platform:
 replicas: {{ include "machinepools.defaultReplicaCount" $params }}
 {{- end -}}
 {{- define "machinepools.clusterdeploymentref.vsphere" -}}
-{{- $networkName := required "Missing vsphere.networkName in your values.yaml file" $.Values.vsphere.networkName -}}
-{{- $datacenter := required "Missing vsphere.datacenter in your values.yaml file" $.Values.vsphere.datacenter -}}
-{{- $datastore := required "Missing vsphere.datastore in your values.yaml file" $.Values.vsphere.datastore -}}
-{{- $cluster := required "Missing vsphere.cluster in your values.yaml file" $.Values.vsphere.cluster -}}
-{{- $server := required "Missing vsphere.server in your values.yaml file" $.Values.vsphere.server -}}
+{{- $params := dict "Values" .Values "Name" .Name -}}
 clusterDeploymentRef:
-  name: {{ .Values.cloud.clusterName }}
+  name: {{ .Values.vsphere.clusterName }}
 name: {{ .Name }}
 platform:
   vsphere:

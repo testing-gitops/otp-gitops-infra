@@ -3,13 +3,7 @@ cloudProvider:
   managed: false # for roks, aro, rosa set to true
 
 vsphere:
-  networkName: 
-  datacenter: 
-  datastore: 
-  cluster: 
-  server: 
-  zones:
-    - 1
+  clusterName: 
   infraNodes:
     nodeCount:
     diskGiB:
@@ -30,7 +24,7 @@ vsphere:
     numCoresPerSocket:
 
 cloud:
-  clusterName: 
+  clusterName:
   zones: {}
   infraNodes:
     nodeCount:

@@ -6,10 +6,10 @@ Default Machinepools Replica Count
 {{- define "machinepools.defaultReplicaCount" -}}
 {{- if eq $.Values.cloudProvider.name "aws" -}}
 {{- if eq .Name "storage" -}}
-{{- default "1" .Values.cloud.storageNodes.nodeCount }}
+{{- default "3" .Values.cloud.storageNodes.nodeCount }}
 {{- end -}}
 {{- if eq .Name "infra" -}}
-{{- default "1" .Values.cloud.infraNodes.nodeCount }}
+{{- default "3" .Values.cloud.infraNodes.nodeCount }}
 {{- end -}}
 {{- if eq .Name "cp4x" -}}
 {{- default "0" .Values.cloud.cloudpakNodes.nodeCount }}
@@ -17,10 +17,10 @@ Default Machinepools Replica Count
 {{- end }}
 {{- if eq $.Values.cloudProvider.name "azure" -}}
 {{- if eq .Name "storage" -}}
-{{- default "1" .Values.cloud.storageNodes.nodeCount }}
+{{- default "3" .Values.cloud.storageNodes.nodeCount }}
 {{- end -}}
 {{- if eq .Name "infra" -}}
-{{- default "1" .Values.cloud.infraNodes.nodeCount }}
+{{- default "3" .Values.cloud.infraNodes.nodeCount }}
 {{- end -}}
 {{- if eq .Name "cp4x" -}}
 {{- default "0" .Values.cloud.cloudpakNodes.nodeCount }}
@@ -39,10 +39,10 @@ Default Machinepools Replica Count
 {{- end -}}
 {{- if eq $.Values.cloudProvider.name "ibmcloud" -}}
 {{- if eq .Name "storage" -}}
-{{- default "1" .Values.cloud.storageNodes.nodeCount }}
+{{- default "3" .Values.cloud.storageNodes.nodeCount }}
 {{- end -}}
 {{- if eq .Name "infra" -}}
-{{- default "1" .Values.cloud.infraNodes.nodeCount }}
+{{- default "3" .Values.cloud.infraNodes.nodeCount }}
 {{- end -}}
 {{- if eq .Name "cp4x" -}}
 {{- default "0" .Values.cloud.cloudpakNodes.nodeCount }}
@@ -113,10 +113,11 @@ Default Node Volume Type
 
 {{/*
 Default IOPS for AWS
+{{ $params := dict "Values" .Values "Name" .Name}}
 */}}
 
 {{- define "machinepools.defaultNodeIopsSize" -}}
-{{- if eq $.Values.cloudProvider.name "aws "-}}
+{{- if eq $.Values.cloudProvider.name "aws" -}}
 {{- if eq .Name "storage" -}}
 {{- default "4000" .Values.cloud.storageNodes.volumeIops }}
 {{- end -}}
@@ -125,6 +126,7 @@ Default IOPS for AWS
 {{- end -}}
 {{- if eq .Name "cp4x" -}}
 {{- default "4000" .Values.cloud.cloudpakNodes.volumeIops }}
+{{- end -}}
 {{- end -}}
 {{- end -}}
 
