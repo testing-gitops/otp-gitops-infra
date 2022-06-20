@@ -238,3 +238,13 @@ rules:
       - read
       - update
       - delete
+  - apiGroups:
+      - clusterview.open-cluster-management.io
+    resources: 
+      - managedclusters
+      - managedclustersets
+    verbs:
+      - create
+      - read
+      - update
+      - delete
