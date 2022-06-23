@@ -59,6 +59,7 @@ rules:
       - selectorsyncsets
       - syncsets
       - admission
+      - clusterpools
     verbs:
       - update
       - create
