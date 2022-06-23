@@ -60,6 +60,7 @@ rules:
       - syncsets
       - admission
       - clusterpools
+      - clusterpools/scale
     verbs:
       - update
       - create
